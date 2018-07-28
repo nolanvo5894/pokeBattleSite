@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="jumbotron jumbotron-fluid">
+    <h1>{{pokeFirst}} vs. {{pokeSecond}}</h1>
+    <img src="{{url_for('static', filename = 'images/' + pokeFirst + '.png')}}">
+    <img src="{{url_for('static', filename = 'images/' + pokeSecond + '.png')}}">
+
+    <form action="/predict" method="post">
+      <input type="submit" name="predict" value="To Battle">
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, session
 from sklearn.externals import joblib
 import numpy as np
 import pandas as pd
@@ -12,11 +12,22 @@ def index():
     pokeList = list(poke['Name'])
     return render_template('index.html', pokeList = pokeList)
 
-@app.route('/predict', methods = ['POST']) #without setting methods to 'POST', getting an error page with 'Method Not Allowed'
-def predict():
+@app.route('/battleStage', methods = ['POST'])
+def battleStage():
     if request.method == 'POST':
         pokeFirst = request.values.get('pokeFirst')
         pokeSecond = request.values.get('pokeSecond')
+        session['pokeFirst'] = pokeFirst
+        session['pokeSecond'] = pokeSecond
+        return render_template('battleStage.html', pokeFirst = pokeFirst, pokeSecond = pokeSecond)
+
+@app.route('/predict', methods = ['POST']) #without setting methods to 'POST', getting an error page with 'Method Not Allowed'
+def predict():
+    if request.method == 'POST':
+        # pokeFirst = request.values.get('pokeFirst')
+        # pokeSecond = request.values.get('pokeSecond')
+        pokeFirst = session.get('pokeFirst')
+        pokeSecond = session.get('pokeSecond')
 
         #loading stat features for first and second pokemons
         pokeStats = joblib.load('pokeStats.pkl')
@@ -60,4 +71,5 @@ def predict():
         return render_template('predict.html', pokeFirst = pokeFirst, pokeSecond = pokeSecond, winner = winner)
 
 if __name__ == '__main__':
+    app.secret_key = 'pokemonBattle'
     app.run(debug = True)
