@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Pokemon Battles Start HERE!!!</h1>
+    {# create a jumbotron for the form #}
+    <div class="jumbotron jumbotron-fluid">
+      <form action="/battleStage" method="post">
+        <label for="first">First Poke</label>
+        <select id = 'first' type="text" name="pokeFirst">
+          {% for poke in pokeList %}
+            <option>{{poke}}</option>
+          {% endfor %}
+        </select>
+        <label for="second">Second Poke</label>
+        <select id = 'second' type="text" name="pokeSecond">
+          {% for poke in pokeList %}
+            <option>{{poke}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="stage" value="To Stage">
+      </form>
+    </div>
+{% endblock %}
