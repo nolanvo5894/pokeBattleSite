@@ -2,10 +2,10 @@ from flask import Flask, render_template, request, url_for, session
 from sklearn.externals import joblib
 import numpy as np
 import pandas as pd
-import os
+#import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = 'pokeBattleSite' #os.urandom(24)
 app.config['SESSION_TYPE'] = 'filesystem'
 
 
