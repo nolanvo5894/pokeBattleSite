@@ -1,6 +1,7 @@
 body {
   background-image: url('background.png');
   background-size: cover;
+
 }
 
 h1 {
@@ -20,6 +21,10 @@ h3 {
 }
 
 label {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+button {
   font-family: 'Do Hyeon', sans-serif;
 }
 
