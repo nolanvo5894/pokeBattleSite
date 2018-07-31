@@ -1,9 +1,13 @@
+<link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+
 {% extends "base.html" %}
 
 {% block content %}
     <h1>Pokemon Battles Start HERE!!!</h1>
     {# create a jumbotron for the form #}
     <div class="jumbotron jumbotron-fluid">
+      <h3>Pick your Pokemons! First Poke moves first!</h3>
+      <br>
       <form action="/battleStage" method="post">
         <label for="first">First Poke</label>
         <select id = 'first' type="text" name="pokeFirst">
@@ -17,6 +21,8 @@
             <option>{{poke}}</option>
           {% endfor %}
         </select>
+        <br>
+        <br>
         <input type="submit" name="stage" value="To Stage">
       </form>
     </div>

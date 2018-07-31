@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
     <h1>Winner of the battle between {{pokeFirst}} and {{pokeSecond}} is {{winner}}!!!</h1>
-</div>
     <img src="{{url_for('static', filename = 'images/' + winner + '.png')}}">
+</div>
+
 {% endblock %}

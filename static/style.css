@@ -1,4 +1,32 @@
+
+
+
+body {
+  background-image: url('background.png');
+  background-size: cover;
+}
+
+
+
 h1 {
-  color: red;
-  align: center;
+  color: #5d1366;
+  text-align: center;
+}
+
+h3 {
+  color: #b15eba;
+  text-align: center
+}
+
+.jumbotron {
+  background: none;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+img {
+  text-align: center;
 }
