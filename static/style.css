@@ -15,6 +15,10 @@ h3 {
   text-align: center
 }
 
+.navbar-brand {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
 label {
   font-family: 'Do Hyeon', sans-serif;
 }
