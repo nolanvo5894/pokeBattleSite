@@ -15,15 +15,16 @@
             <option>{{poke}}</option>
           {% endfor %}
         </select>
+        
         <label for="second">Second Poke</label>
-        <select id = 'second' type="text" name="pokeSecond">
+        <select style = 'width:auto' id = 'second' type="text" name="pokeSecond">
           {% for poke in pokeList %}
             <option>{{poke}}</option>
           {% endfor %}
         </select>
         <br>
         <br>
-        <input type="submit" name="stage" value="To Stage">
+        <button type="submit" class = 'btn btn-primary' name="stage"> To Stage! </button>
       </form>
     </div>
 {% endblock %}

@@ -1,22 +1,24 @@
-
-
-
 body {
   background-image: url('background.png');
   background-size: cover;
 }
 
-
-
 h1 {
+  font-family: 'Do Hyeon', sans-serif;
   color: #5d1366;
   text-align: center;
 }
 
 h3 {
+  font-family: 'Do Hyeon', sans-serif;
   color: #b15eba;
   text-align: center
 }
+
+label {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
 
 .jumbotron {
   background: none;
@@ -24,9 +26,5 @@ h3 {
 }
 
 input {
-  text-align: center;
-}
-
-img {
   text-align: center;
 }
