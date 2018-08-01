@@ -27,8 +27,7 @@ def battleStage():
 @app.route('/predict', methods = ['POST']) #without setting methods to 'POST', getting an error page with 'Method Not Allowed'
 def predict():
     if request.method == 'POST':
-        # pokeFirst = request.values.get('pokeFirst')
-        # pokeSecond = request.values.get('pokeSecond')
+        
         pokeFirst = session.get('pokeFirst')
         pokeSecond = session.get('pokeSecond')
 
