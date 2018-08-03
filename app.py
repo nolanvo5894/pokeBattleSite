@@ -27,7 +27,7 @@ def battleStage():
 @app.route('/predict', methods = ['POST']) #without setting methods to 'POST', getting an error page with 'Method Not Allowed'
 def predict():
     if request.method == 'POST':
-        
+
         pokeFirst = session.get('pokeFirst')
         pokeSecond = session.get('pokeSecond')
 
@@ -62,7 +62,7 @@ def predict():
 
         pokeModel = joblib.load('pokeModel.pkl')
         X = np.array([firstHP, firstAttack, firstDefense, firstSpAtk, firstSpDef, firstSpeed, firstLegendary, secondHP, secondAttack, secondDefense, secondSpAtk, secondSpDef, secondSpeed, secondLegendary, typeMatch])
-        X = X.reshape(1,-1) #this suggestion from the error page works, but why? sklearn only accepts 2D array?
+        X = X.reshape(1,-1) #important
         winner = pokeModel.predict(X)
 
         if winner == 0:
